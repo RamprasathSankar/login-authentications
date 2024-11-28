@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="log in.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form>
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email"><span style="color: brown" ;>E</span>mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password"><span style="color: brown" ;>p</span>assword:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button id="saveButton"><span style="color: brown" ;>l</span>ogin</button>
+            </div>
+        </form>
+
+        <div class="form-footer">
+            <p>Don't have an account? <a
+                    href="./indexreg.html">Register here</a>
+            </p>
+        </div>
+    </div>
+    <h1>
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+    </h1>
+
+    <script>
+        const email = localStorage.getItem('mail');
+        // console.log(email);
+
+        const password = localStorage.getItem('pass');
+        // console.log(password);
+
+        const ml = document.getElementById('email')
+        // console.log(ml);
+
+        const psword = document.getElementById('password');
+        // console.log(psword);
+
+        const butt = document.getElementById('saveButton')
+        butt.addEventListener('click', (event) => {
+            event.preventDefault();
+            inputvalidation();
+        })
+        function inputvalidation() {
+
+            if (email === ml.value) {
+                console.log("Email is correct");
+
+
+            }
+            else {
+                console.log("Incorrect email");
+                alert("if ur mail id incorrect")
+
+            }
+            if (password === psword.value) {
+                console.log("Password is correct");
+
+
+            }
+            else {
+                console.log("Incorrect password");
+                alert("if ur password incorrect")
+
+            }
+            if (email === ml.value && password === psword.value) {
+                window.location.href = "https://www.example.com";
+            }
+        }
+    </script>
+</body>
+
+</html>

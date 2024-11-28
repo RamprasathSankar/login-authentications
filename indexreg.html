@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Register</h2>
+        <form>
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullname"><span style="color: brown" ;>F</span>ull Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email"><span style="color: brown" ;>E</span>mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password"><span style="color: brown" ;>P</span>assword:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirm_password"><span style="color: brown" ;>C</span>onfirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button id="saveButton">Register</button>
+            </div>
+        </form>
+
+        <div class="form-footer">
+            <p>Already have an account? <a
+                    href="./index.html"
+                    style="color: blue;"> Login here</a></p>
+        </div>
+    </div>
+    <!-- <h1>
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+    </h1>
+ -->
+
+    <script>
+        const fname = document.getElementById('fullname');
+        const mail = document.getElementById('email');
+        const pass = document.getElementById('password');
+        const Button = document.getElementById('saveButton');
+        Button.addEventListener('click', () => {
+            localStorage.setItem('Name', fname.value);
+            localStorage.setItem('mail', mail.value);
+            localStorage.setItem('pass', pass.value);
+        })
+        /* document.getElementById('span1').innerHTML = localStorage.getItem('Name');
+         document.getElementById('span2').innerHTML = localStorage.getItem('mail');
+         document.getElementById('span3').innerHTML = localStorage.getItem('pass')*/
+    </script>
+</body>
+
+</html>
